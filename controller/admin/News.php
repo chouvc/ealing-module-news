@@ -6,9 +6,9 @@
 */
 namespace app\news\controller\admin;
 
-use app\ealing\controller\BaseApi;
+use app\ealing\controller\admin\builder\BackstageListBuilder;
 
-class NewsAdmin extends BaseApi
+class News
 {
     /**
     * 获取后台新闻列表数据
@@ -19,7 +19,19 @@ class NewsAdmin extends BaseApi
     */
     public function store()
     {
-        return 1;
+        $builder = new BackstageListBuilder();
+
+        $list = [];
+
+        $builder->title("测试")
+            ->buttonNew(url('app\ealing\controller\admin\Index@index'))
+            ->setSearchPostUrl(url('index'))
+            ->searchText('','title','text',"关键词")
+            ->keyText('id',lang('_ID_'))
+            ->keyText('title',"名称")
+            ->data($list);
+        
+        return $builder->show();
     }
     
     /**
