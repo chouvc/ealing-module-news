@@ -6,9 +6,13 @@
 */
 
 return [
+    'alias' => 'news',//模块栏目别名
+    'icon'  => 'ios-paper-outline',//模块栏目图标
+    'path' => url(app\news\controller\admin\News::class.'@store'),//模块入口地址(路由)
+    
     'open' => 'news',//默认打开的侧边一级栏目
     'active' => 'news-list',//默认页面指定
-    'theme' => 'light',//主题（针对iview的）
+    
     'title' => '新闻',//面包屑一级名称
     'subTitle' => '新闻管理',//面包屑二级名称
     'actionTitle' => '新闻列表',//面包屑三级名称
