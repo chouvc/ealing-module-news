@@ -24,10 +24,8 @@ class News
         $list = [];
 
         $builder->title("新闻列表 - 新闻管理")
-            ->buttonNew(url('app\ealing\controller\admin\Index@index'))
-            ->setSearchPostUrl(url('index'))
-            ->searchText('','title','text',"关键词")
-            ->keyText('id',lang('_ID_'))
+            ->buttonNew(url(News::class.'@show'))
+            ->keyText('id', '用户ID')
             ->keyText('title',"名称")
             ->data($list);
         
