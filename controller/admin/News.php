@@ -7,8 +7,9 @@
 namespace app\news\controller\admin;
 
 use app\ealing\controller\admin\builder\BackstageListBuilder;
+use app\ealing\controller\admin\BaseController;
 
-class News
+class News extends BaseController
 {
     /**
     * 获取后台新闻列表数据
