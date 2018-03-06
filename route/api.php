@@ -9,16 +9,15 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 use think\Route;
+use app\news\controller\v1 as API1;
 
 Route::group('news', function(){
     //前端路由   可以定义N个版本
     Route::group('v1', function(){
-        Route::get('/', 'news/v1.News/store');
+        Route::get('/', API1\News::class.'@store');
         
         Route::group('cates', function(){
-            Route::get('/', function(){
-                return 123;
-            });
+            Route::get('/', API1\News::class.'@category');
         });
         
         Route::get('categories/pinneds', function(){
