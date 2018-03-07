@@ -3,7 +3,7 @@
 use think\migration\Migrator;
 use think\migration\db\Column;
 
-class User extends Migrator
+class News extends Migrator
 {
     /**
      * Change Method.
@@ -34,13 +34,8 @@ class User extends Migrator
             ->addColumn(Column::integer("id")->setUnsigned()->setLimit(11)->setComment("news id."))
             ->addColumn(Column::timestamp('created_at')->setNullable()->setDefault(null)->setComment('created time.'))
             ->addColumn(Column::timestamp('updated_at')->setNullable()->setDefault(null)->setComment('updated time.'))
-            ->addColumn(Column::timestamp('deleted_at	')->setNullable()->setDefault(null)->setComment('deleted time.'))
+            ->addColumn(Column::timestamp('deleted_at')->setNullable()->setDefault(null)->setComment('deleted time.'))
             ->create();
-    }
-    
-    public function up()
-    {
-        
     }
     
     /**
